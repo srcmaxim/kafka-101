@@ -1,0 +1,6 @@
+{
+  "subject": "cities-value",
+  "version": 1,
+  "id": 1,
+  "schema": "{\"type\":\"record\",\"name\":\"City\",\"namespace\":\"com.github.srcmaxim.kafka.event\",\"fields\":[{\"name\":\"city_id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"}],\"connect.name\":\"com.github.srcmaxim.kafka.event.City\"}"
+}

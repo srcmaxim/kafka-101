@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output-test url="file://$MODULE_DIR$/../../../../kafka/consumer/build/classes/java/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../kafka/consumer/build/generated/sources/annotationProcessor/java/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../kafka/consumer/build/generated/sources/annotationProcessor/java/test" isTestSource="true" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../kafka/consumer/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../kafka/consumer/src/test/java" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="kafka.cat.main" />
+    <orderEntry type="library" name="Gradle: org.apache.kafka:kafka-clients:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.3.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.20" level="project" />
+    <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.assertj:assertj-core:3.19.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.luben:zstd-jni:1.4.5-6" level="project" />
+    <orderEntry type="library" name="Gradle: org.lz4:lz4-java:1.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.xerial.snappy:snappy-java:1.1.7.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apiguardian:apiguardian-api:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.3.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.7.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="kafka.cat.main" />
+</module>

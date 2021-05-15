@@ -1,0 +1,2 @@
+# Ignore Avro generated classes
+src/main/java

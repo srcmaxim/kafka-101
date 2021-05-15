@@ -1,0 +1,7 @@
+
+includeBuild('platforms')
+includeBuild('build-logic')
+
+includeBuild('domain')
+
+includeBuild('kafka')

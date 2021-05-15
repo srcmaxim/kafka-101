@@ -1,0 +1,15 @@
+{
+  "name": "elasticsearch-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+    "tasks.max": "1",
+    "topics": "key_cities",
+    "connection.url": "http://elasticsearch:9200",
+    "value.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+    "value.converter.apicurio.registry.url": "http://schema-registry:8080/api",
+    "value.converter.apicurio.registry.global-id": "io.apicurio.registry.utils.serde.strategy.AutoRegisterIdStrategy",
+    "type.name": "_doc"
+  },
+  "tasks": [],
+  "type": null
+}

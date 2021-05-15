@@ -1,0 +1,13 @@
+plugins {
+    id('java-platform')
+}
+
+group = 'com.github.srcmaxim.platform'
+
+dependencies {
+    constraints {
+        api('org.springframework.boot:org.springframework.boot.gradle.plugin:2.4.0')
+        api('com.github.davidmc24.gradle.plugin.avro-base:com.github.davidmc24.gradle.plugin.avro-base.gradle.plugin:1.2.0')
+        api('io.freefair.lombok:io.freefair.lombok.gradle.plugin:5.3.3.3')
+    }
+}

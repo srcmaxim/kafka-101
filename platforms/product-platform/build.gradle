@@ -1,0 +1,20 @@
+plugins {
+    id('java-platform')
+}
+
+group = 'com.github.srcmaxim.platform'
+
+dependencies {
+    constraints {
+        api('org.apache.kafka:kafka-clients:2.7.0')
+        api('org.projectlombok:lombok:1.18.20')
+
+        api('org.slf4j:slf4j-simple:1.7.30')
+        api('org.apache.kafka:kafka-streams:2.7.0')
+        api('io.confluent:kafka-streams-avro-serde:6.1.1')
+        api('io.apicurio:apicurio-registry-serdes-avro-serde:2.0.0.Final')
+        api('org.apache.avro:avro:1.10.2')
+
+        api('com.google.code.gson:gson:2.8.6')
+    }
+}

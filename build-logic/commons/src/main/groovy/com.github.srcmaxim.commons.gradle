@@ -1,0 +1,25 @@
+plugins {
+    id('java')
+    id('com.github.srcmaxim.jacoco')
+}
+
+group = 'com.github.srcmaxim.kafka'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    implementation(platform('com.github.srcmaxim.platform:product-platform'))
+    implementation('org.slf4j:slf4j-simple')
+
+    testImplementation(platform('com.github.srcmaxim.platform:test-platform'))
+    testImplementation('org.junit.jupiter:junit-jupiter-api')
+    testImplementation('org.assertj:assertj-core')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}

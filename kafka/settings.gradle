@@ -1,0 +1,27 @@
+// == Define locations for build logic ==
+pluginManagement {
+    repositories {
+        gradlePluginPortal() // if pluginManagement.repositories looks like this, it can be omitted as this is the default
+    }
+    includeBuild('../build-logic')
+}
+
+// == Define locations for components ==
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://packages.confluent.io/maven"
+        }
+    }
+}
+includeBuild('../platforms')
+includeBuild('../domain')
+
+// == Define the inner structure of this component ==
+rootProject.name = 'kafka'
+include('producer')
+include('producer-callback')
+include('consumer')
+include('message-ordering')
+include('connect-add-key-to-source')

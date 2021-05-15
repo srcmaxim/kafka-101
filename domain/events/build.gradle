@@ -1,0 +1,10 @@
+plugins {
+    id('com.github.srcmaxim.java-library')
+}
+
+group = "${group}.domain"
+
+dependencies {
+    api('com.github.srcmaxim.kafka.domain:avro-events')
+    api('org.apache.avro:avro')
+}

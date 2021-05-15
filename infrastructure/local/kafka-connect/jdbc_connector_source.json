@@ -1,0 +1,20 @@
+{
+  "name": "jdbc-cities",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "connection.url": "jdbc:postgresql://postgres:5432/connector_db",
+    "connection.user": "connector",
+    "connection.password": "connector",
+    "mode": "incrementing",
+    "incrementing.column.name": "city_id",
+    "topic.prefix": "",
+    "table.whitelist": "cities",
+    "value.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+    "value.converter.apicurio.registry.url": "http://schema-registry:8080/api",
+    "value.converter.apicurio.registry.global-id": "io.apicurio.registry.utils.serde.strategy.AutoRegisterIdStrategy",
+    "transforms": "setValueSchema",
+    "transforms.setValueSchema.type": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
+    "transforms.setValueSchema.schema.name": "com.github.srcmaxim.kafka.event.City",
+    "tasks.max": "1"
+  }
+}

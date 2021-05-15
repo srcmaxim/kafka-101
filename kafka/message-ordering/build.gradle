@@ -1,0 +1,25 @@
+plugins {
+    id('com.github.srcmaxim.java-application')
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'com.google.cloud.tools.jib' version '2.8.0'
+}
+
+group = "${group}.kafka"
+
+application {
+    mainClass = 'com.github.srcmaxim.kafka.producer.KafkaProducerApplication'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compileClasspath.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.github.srcmaxim.kafka.producer.KafkaProducerApplication'
+        )
+    }
+}
+
+shadowJar {
+    mainClassName = 'com.github.srcmaxim.kafka.producer.KafkaProducerApplication'
+    archiveClassifier = ''
+}

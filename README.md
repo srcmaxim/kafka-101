@@ -35,9 +35,9 @@ List Topics:
 kafka-topics --list --bootstrap-server broker:9092
 ```
 
-Consume Avro:
+Consume Avro (with Confluent schema-registry):
 ```
-docker-compose exec schema-registry bash
+docker-compose exec confluent-schema-registry bash
 kafka-avro-console-consumer --topic cities \
    --bootstrap-server broker:9092 --from-beginning \
    --property schema.registry.url=http://localhost:8080 \
@@ -56,6 +56,15 @@ kafka-avro-console-consumer --topic key_cities \
    --property print.key=true \
    --property key.deserializer=org.apache.kafka.common.serialization.LongDeserializer \
    --timeout-ms 20000
+docker exec -i confluent-schema-registry /usr/bin/kafka-avro-console-producer \
+    --topic acting-events \
+    --bootstrap-server broker:9092 \
+    --property value.schema="$(< domain/avro-events/src/main/avro/acting_event.avsc)"
+    
+docker exec -i confluent-schema-registry /usr/bin/kafka-avro-console-consumer \
+    --topic acting-events \
+    --bootstrap-server broker:9092 \
+    --property value.schema="$(< domain/avro-events/src/main/avro/acting_event.avsc)"
 ```
 
 Schema Registry get schemas:

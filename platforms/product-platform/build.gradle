@@ -14,6 +14,7 @@ dependencies {
         api('io.confluent:kafka-streams-avro-serde:6.1.1')
         api('io.apicurio:apicurio-registry-serdes-avro-serde:2.0.0.Final')
         api('org.apache.avro:avro:1.10.2')
+        api('com.github.javafaker:javafaker:1.0.2')
 
         api('com.google.code.gson:gson:2.8.6')
     }

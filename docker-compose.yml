@@ -39,7 +39,7 @@ services:
       KAFKA_JMX_PORT: 9991
 
   schema-registry:
-    image: apicurio/apicurio-registry-kafka
+    image: apicurio/apicurio-registry-mem:2.0.0.Final
     container_name: schema-registry
     restart: always
     depends_on:
@@ -51,6 +51,19 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: "broker:9092"
       APPLICATION_ID: schema-registry-id
       APPLICATION_SERVER: "schema-registry:8080"
+
+  confluent-schema-registry:
+    image: confluentinc/cp-schema-registry:6.1.1
+    hostname: confluent-schema-registry
+    container_name: confluent-schema-registry
+    depends_on:
+      - broker
+    ports:
+      - "8081:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: confluent-schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'broker:9092'
+      SCHEMA_REGISTRY_LOG4J_ROOT_LOGLEVEL: WARN
 
   postgres:
     build: ./infrastructure/local/postgres

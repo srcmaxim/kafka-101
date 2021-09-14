@@ -1,4 +1,4 @@
-# kafka-101
+# Kafka 101
 
 1. Start Multi Broker Kafka `docker-compose -f docker-compose-multi-broker.yml up -d`
 
